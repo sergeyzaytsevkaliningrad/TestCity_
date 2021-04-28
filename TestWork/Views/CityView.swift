@@ -61,13 +61,23 @@ struct CityView: View {
                                 })
             }.navigationBarTitle(Text("Citys"))
             
-        }.onAppear(perform: loadData)
+        }.onAppear(perform: loadData).onAppear(perform: starFakeNNetworkCall)
     }
     
     func loadData() {
         guard URL(string:  "https://www.youtube.com/watch?v=k5rupivxnMA&list=WL&index=138") != nil else {
             print("Invalid URL")
             return
+        }
+    }
+    func starFakeNNetworkCall() {
+        self.isLoading = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.easeInOut(duration: 0.25)) {
+                self.isLoading = false
+            }
+            
         }
     }
 }
