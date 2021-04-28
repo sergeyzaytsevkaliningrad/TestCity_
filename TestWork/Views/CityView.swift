@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct CityView: View {
+    @State private var isLoading = false
     
     var cityData :GeoDB = GeoDB()
     
@@ -17,42 +18,49 @@ struct CityView: View {
     var body: some View {
         NavigationView{
             
-            VStack(spacing: 5) {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                Text("Loading...")
-                    .font(.footnote)
-                    .foregroundColor(.black)
-            }
-            
             List(videos, id: \.id){ item in
                 
                 NavigationLink( destination: CityDetailView(video: item),
-                    label: {
-                        
-                    
-                
-                Image("Coolerbackground")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 100)
-                    .cornerRadius(40)
-                
-                VStack(alignment: .leading, spacing: 5){
-                    Text(item.title)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.5)
-                    
-                    Text(item.uploadDate)
-                        .font(.subheadline)
-                        .minimumScaleFactor(0.5)
-                        .foregroundColor(.secondary)
-                }
-                    })
+                                label: {
+                                    
+                                    
+                                    
+                                    Image("Coolerbackground")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 50, height: 100)
+                                        .cornerRadius(40)
+                                    
+                                    VStack(alignment: .leading, spacing: 5){
+                                        Text(item.title)
+                                            .font(.headline)
+                                            .fontWeight(.semibold)
+                                            .lineLimit(2)
+                                            .minimumScaleFactor(0.5)
+                                        
+                                        Text(item.uploadDate)
+                                            .font(.subheadline)
+                                            .minimumScaleFactor(0.5)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    
+                                    if isLoading {
+                                        ZStack {
+                                            Color.white.opacity(0.5).ignoresSafeArea()
+                                            
+                                            VStack(spacing: 5) {
+                                                ProgressView()
+                                                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                                Text("Loading...")
+                                                    .font(.footnote)
+                                                    .foregroundColor(.black)
+                                            }
+                                        }
+                                    }
+                                    
+                                })
             }.navigationBarTitle(Text("Citys"))
-          
+            
         }.onAppear(perform: loadData)
     }
     
