@@ -19,7 +19,6 @@
 		12824F422639AC1100A51C4B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12824F412639AC1100A51C4B /* Network.swift */; };
 		12824F482639BEDF00A51C4B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12824F472639BEDF00A51C4B /* Video.swift */; };
 		12824F4D2639C96D00A51C4B /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12824F4C2639C96D00A51C4B /* CityDetailView.swift */; };
-		12E1BE832639679A00AD4E33 /* InstructionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E1BE822639679A00AD4E33 /* InstructionData.swift */; };
 		9621E55E4F408C302CA4FBA4 /* Pods_TestWork_TestWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5166A9E97F1157D64F78898 /* Pods_TestWork_TestWorkUITests.framework */; };
 		A3B713F0E5AF5E178A77F1C8 /* Pods_TestWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93875B13E6D473ACFB0DBF6 /* Pods_TestWork.framework */; };
 		C23B681F3A55B631EDB92E7E /* Pods_TestWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4751B1318D245F7DBDFE3D1C /* Pods_TestWorkTests.framework */; };
@@ -62,7 +61,6 @@
 		12824F412639AC1100A51C4B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		12824F472639BEDF00A51C4B /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		12824F4C2639C96D00A51C4B /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
-		12E1BE822639679A00AD4E33 /* InstructionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionData.swift; sourceTree = "<group>"; };
 		4081BA4C1DA06D9DA6C7B935 /* Pods-TestWork-TestWorkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWork-TestWorkUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestWork-TestWorkUITests/Pods-TestWork-TestWorkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4751B1318D245F7DBDFE3D1C /* Pods_TestWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8E361167D58C9ADF080E1F /* Pods-TestWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWork.debug.xcconfig"; path = "Target Support Files/Pods-TestWork/Pods-TestWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		1213C5F9263874F00025C2CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				12E1BE822639679A00AD4E33 /* InstructionData.swift */,
 				12824F472639BEDF00A51C4B /* Video.swift */,
 			);
 			path = Resources;
@@ -469,7 +466,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E1BE832639679A00AD4E33 /* InstructionData.swift in Sources */,
 				12824F352639A6C700A51C4B /* GeoDB.swift in Sources */,
 				12824F422639AC1100A51C4B /* Network.swift in Sources */,
 				1213C5C4263873530025C2CC /* AppDelegate.swift in Sources */,
