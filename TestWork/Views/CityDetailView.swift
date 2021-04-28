@@ -10,17 +10,19 @@ import SwiftUI
 struct CityDetailView: View {
     @State private var isLoading = false
     
-    var video: Video
+    @State var citiesArray = [City]()
     
     var body: some View {
-        
+        List(citiesArray, id: \.city){ item in
         VStack{
+            
             Spacer()
             
-            Text(video.title)
-                .padding()
-                .font(.title2)
+            Text(item.city)
+                .font(.headline)
+                .fontWeight(.semibold)
                 .lineLimit(2)
+                .minimumScaleFactor(0.5)
             
             Spacer()
             
@@ -73,6 +75,7 @@ struct CityDetailView: View {
 
 struct CityDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CityDetailView(video: VideoList.topTen.first!)
+        CityDetailView()
+//        CityDetailView(city: ResponseData.data.countryCode!)
     }
 }

@@ -14,10 +14,10 @@ final class GeoDB {
         "x-rapidapi-host": "wft-geo-db.p.rapidapi.com"
     ]
     
-    let request = NSMutableURLRequest(url: NSURL(string: "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions")! as URL,
+    let request = NSMutableURLRequest(url: NSURL(string: "https://wft-geo-db.p.rapidapi.com/v1/geo/cities")! as URL,
                                       cachePolicy: .useProtocolCachePolicy,
                                       timeoutInterval: 10.0)
-    func requestHttpMethod(){
+    func requestHttpMethod(completion: @escaping ([City])  -> Void){
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         let session = URLSession.shared
@@ -25,8 +25,15 @@ final class GeoDB {
             if (error != nil) {
                 print(error)
             } else {
-                let httpResponse = response as? HTTPURLResponse
-                print(httpResponse)
+                guard let data = data else {
+                    completion([])
+                    return
+                }
+                guard let cities = try? JSONDecoder().decode(ResponseData.self, from: data) else {
+                    completion([])
+                    return
+                }
+                completion(cities.data)
             }
         })
         
