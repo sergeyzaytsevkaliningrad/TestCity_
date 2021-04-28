@@ -18,7 +18,7 @@ struct CityView: View {
             List(citiesArray, id: \.city){ item in
                 
                 NavigationLink( destination: CityDetailView(city: item),
-                   label: {
+                    label: {
                         
                     
                 
