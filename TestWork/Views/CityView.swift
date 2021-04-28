@@ -16,6 +16,15 @@ struct CityView: View {
     
     var body: some View {
         NavigationView{
+            
+            VStack(spacing: 5) {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                Text("Loading...")
+                    .font(.footnote)
+                    .foregroundColor(.black)
+            }
+            
             List(videos, id: \.id){ item in
                 
                 NavigationLink( destination: CityDetailView(video: item),

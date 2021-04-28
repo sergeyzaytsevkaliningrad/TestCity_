@@ -12,6 +12,15 @@ struct CityDetailView: View {
     var video: Video
     
     var body: some View {
+        
+        VStack(spacing: 5) {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+            Text("Loading...")
+                .font(.footnote)
+                .foregroundColor(.black)
+        }
+        
         VStack{
             Spacer()
             
